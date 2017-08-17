@@ -3,7 +3,7 @@
 //  CryptoSwiftTests
 //
 //  Created by Marcin Krzyzanowski on 06/07/14.
-//  Copyright (c) 2014 Marcin Krzyzanowski. All rights reserved.
+//  Copyright (C) 2014-2017 Krzyzanowski. All rights reserved.
 //
 // http://www.di-mgt.com.au/sha_testvectors.html (http://csrc.nist.gov/groups/ST/toolkit/documents/Examples/SHA_All.pdf)
 //
@@ -166,7 +166,7 @@ final class DigestTests: XCTestCase {
     extension DigestTests {
 
         func testMD5Performance() {
-            self.measureMetrics([XCTPerformanceMetric_WallClockTime], automaticallyStartMeasuring: false, for: { () -> Void in
+            self.measureMetrics([XCTPerformanceMetric.wallClockTime], automaticallyStartMeasuring: false, for: { () -> Void in
                 let arr = Array<UInt8>(repeating: 200, count: 1024 * 1024)
                 self.startMeasuring()
                 _ = Digest.md5(arr)
